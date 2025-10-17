@@ -1,12 +1,11 @@
 import 'dart:io';
 
 void main() {
-  int balance = 1000; // الرصيد الابتدائي
+  int balance = 1000; 
   print("Welcome to Simple ATM");
   print("Your starting balance is $balance");
 
   while (true) { // علشان اخلي البرنامج يفضل شغال دايما ميقفلش نهائي
-    // عرض المنيو
     print("\n Choose an option:");
     print("1. Check Balance");
     print("2. Withdraw");
@@ -16,18 +15,14 @@ void main() {
     stdout.write("Enter choice: "); // علشان ادخل الاختيار اللي عايزه
     String? choiceInput = stdin.readLineSync(); // علشان اقراء اللي كتبه المستخدم 
     int? choice = int.tryParse(choiceInput ?? ""); 
-
     if (choice == null) {
       print("Invalid choice");
       continue;
     }
-
     if (choice == 1) {
-      // Check Balance
       print("Your current balance is $balance");
     } else if (choice == 2) {
-      // Withdraw السحب 
-      stdout.write("Enter amount to withdraw: "); // طلب مبلغ السحب 
+      stdout.write("Enter amount to withdraw: ");
       String? withdrawInput = stdin.readLineSync();
       int? amount = int.tryParse(withdrawInput ?? "");
 
@@ -40,7 +35,6 @@ void main() {
         print("Withdrawal successful! Your current balance is $balance");
       }
     } else if (choice == 3) {
-      // Deposit الايداع
       stdout.write("Enter amount to deposit: "); // طلب مبلغ الايداع 
       String? depositInput = stdin.readLineSync(); // ادخال المبلغ وقراءته 
       int? amount = int.tryParse(depositInput ?? "");
@@ -56,7 +50,6 @@ void main() {
       print("Thank you for using the ATM!");
       break; // قفلت البرنامج نهائي 
     } else {
-      // Invalid choice
       print("Invalid choice");
     }
   }
