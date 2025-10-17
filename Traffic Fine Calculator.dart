@@ -1,4 +1,5 @@
 import 'dart:io';
+
 void main() {
   stdout.write("Enter speed limit: ");
   int speedLimit = int.parse(stdin.readLineSync()!);
@@ -12,10 +13,11 @@ void main() {
   if (overSpeed > 20) {
     fine = 1000;
   } else if (overSpeed > 0) {
-    fine = 500; 
+    fine = 500;
   }
   if (!hasLicense) {
     fine += 500;
   }
+
   print("Total fine: $fine");
 }
